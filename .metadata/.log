@@ -4604,3 +4604,93 @@ java.lang.RuntimeException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:26:00.470
 !MESSAGE executing callback sts4.classpath.jqhGqBIl SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:49:00.932
+!MESSAGE Preparing classpath changed notification eureka-servver
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:49:00.933
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:49:00.933
+!MESSAGE classpath=1 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:49:00.934
+!MESSAGE buffering callback sts4.classpath.jqhGqBIl eureka-servver false 1
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:49:00.934
+!MESSAGE executing callback sts4.classpath.jqhGqBIl 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:49:02.909
+!MESSAGE executing callback sts4.classpath.jqhGqBIl SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:49:02.910
+!MESSAGE Preparing classpath changed notification eureka-servver
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:49:02.910
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:49:02.916
+!MESSAGE classpath=177 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:49:02.921
+!MESSAGE buffering callback sts4.classpath.jqhGqBIl eureka-servver false 177
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:49:02.921
+!MESSAGE executing callback sts4.classpath.jqhGqBIl 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:49:02.924
+!MESSAGE executing callback sts4.classpath.jqhGqBIl SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:49:18.788
+!MESSAGE Preparing classpath changed notification eureka-servver
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:49:18.788
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:49:18.794
+!MESSAGE classpath=177 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:49:18.799
+!MESSAGE buffering callback sts4.classpath.jqhGqBIl eureka-servver false 177
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:49:18.799
+!MESSAGE executing callback sts4.classpath.jqhGqBIl 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:49:18.802
+!MESSAGE executing callback sts4.classpath.jqhGqBIl SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:54:15.355
+!MESSAGE Preparing classpath changed notification loja
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:54:15.356
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:54:15.362
+!MESSAGE classpath=161 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:54:15.367
+!MESSAGE buffering callback sts4.classpath.jqhGqBIl loja false 161
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:54:15.367
+!MESSAGE executing callback sts4.classpath.jqhGqBIl 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:54:15.370
+!MESSAGE executing callback sts4.classpath.jqhGqBIl SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:57:40.016
+!MESSAGE Preparing classpath changed notification fornecedor
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:57:40.017
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:57:40.024
+!MESSAGE classpath=184 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:57:40.030
+!MESSAGE buffering callback sts4.classpath.jqhGqBIl fornecedor false 184
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:57:40.031
+!MESSAGE executing callback sts4.classpath.jqhGqBIl 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-18 14:57:40.034
+!MESSAGE executing callback sts4.classpath.jqhGqBIl SUCCESS [done]
