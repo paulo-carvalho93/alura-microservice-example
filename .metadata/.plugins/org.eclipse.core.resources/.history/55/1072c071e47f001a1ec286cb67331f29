@@ -1,0 +1,27 @@
+package br.com.capgemini.services.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import br.com.capgemini.model.PedidoInfo;
+import br.com.capgemini.repository.PedidoRepository;
+
+
+public class PedidoServiceImpl implements PedidoService {
+	
+	@Autowired
+    public PedidoServiceImpl(PedidoRepository pedidoRepository){
+        this.pedidoRepository = pedidoRepository;
+    }
+
+    @Override
+    public PedidoInfo saveOrderInfo(PedidoInfo pedidoInfo) {
+    	pedidoInfo.setOrderTime(System.currentTimeMillis());
+    	pedidoInfo.setTotalPrice(orderInfo.getFoodItems().stream().mapToInt(e -> e.getPrice() * e.getQuantity()).sum());
+        return pedidoRepository.save(orderInfo);
+    }
+
+    @Override
+    public OrderInfo findOrderInfoById(String id) {
+        return orderRepository.findFirstById(id);
+    }
+}

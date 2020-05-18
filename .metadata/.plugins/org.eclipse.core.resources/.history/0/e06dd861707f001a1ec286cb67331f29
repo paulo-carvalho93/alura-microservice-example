@@ -1,0 +1,17 @@
+package br.com.capgemini.service;
+
+import java.util.List;
+
+import br.com.capgemini.restaurante.model.MenuItem;
+
+public interface MenuItemService {
+	
+	void salvarMenu(MenuItem menu);
+	
+	void salvarMenuList(List<MenuItem> menuList);
+	
+	MenuItem getMenuByName(String nome);
+	
+	List<MenuItem> getAllMenuItemsByRestaurantId(String rid);
+	
+}

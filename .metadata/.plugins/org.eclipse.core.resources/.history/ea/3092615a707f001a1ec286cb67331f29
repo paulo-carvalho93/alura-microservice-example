@@ -1,0 +1,39 @@
+package br.com.capgemini.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.stereotype.Service;
+
+import br.com.capgemini.repository.MenuItemsRepository;
+import br.com.capgemini.restaurante.model.MenuItem;
+import br.com.capgemini.service.MenuService;
+
+@Service
+public class MenuItemServiceImpl implements MenuService{
+	
+	private MenuItemsRepository menuItemsRepository;
+	
+	@Autowired
+	public MenuItemServiceImpl(MenuItemsRepository menuItemsRepository){
+        this.menuItemsRepository = menuItemsRepository;
+    }
+	
+    public void salvarMenu(MenuItem menu) {
+    	menuItemsRepository.save(menu);
+    }
+    
+    public void salvarMenuList(List<MenuItem> menuList) {
+    	menuItemsRepository.saveAll(menuList);
+    }
+
+    public MenuItem getMenuByName(String nome) {
+        return menuItemsRepository.findByName(nome);
+    }
+
+    public List<MenuItem> getAllMenuItemsByRestaurantId(String rid) {
+        return menuItemsRepository.findAllByRestauranteId(rid);
+    }
+
+}

@@ -1,0 +1,25 @@
+package br.com.restaurante.pedidoservice.model;
+
+@Data
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+@Entity(name = "foodItem")
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
+@NoArgsConstructor(access = AccessLevel.PUBLIC)
+public class FoodItemInfo {
+
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    private String foodId;
+    private String foodName;
+    private String description;
+    private String restaurantName;
+    private double price;
+    //private double tax;
+    private int quantity;
+    private String restaurantId;
+
+    @ManyToOne
+    private OrderInfo orderInfo;
+}

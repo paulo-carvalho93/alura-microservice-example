@@ -1,0 +1,24 @@
+package br.com.capgemini.restaurante.model;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.Data;
+
+@Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@Document
+public class Cardapio {
+	
+	@Id
+    private String id;
+	
+	private String restauranteId;
+
+	private String nome;
+
+	private String descricao;
+
+	private double preco;
+
+}

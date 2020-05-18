@@ -1,0 +1,38 @@
+package br.com.capgemini.rest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.capgemini.model.PedidoInfo;
+import br.com.capgemini.services.PedidoService;
+import demo.rest.OrderService;
+
+@RestController
+@RequestMapping(value = "/api")
+public class PedidoServiceRestController {
+	
+	private PedidoService pedidoService;
+	
+    @Autowired
+    public PedidoServiceRestController(PedidoService pedidoService){
+        this.pedidoService = pedidoService;
+    }
+	
+    @RequestMapping(value = "/restaurantes/{rid}/pedidos", method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    public PedidoInfo upload(@RequestBody  PedidoInfo pedidoInfo){
+        return this.pedidoService.savePedidoInfo(pedidoInfo);
+    }
+    
+    @RequestMapping(value = "/restaurantes/{id}", method = RequestMethod.GET)
+    public PedidoInfo getPedidoInfoById(@PathVariable String id){
+        return pedidoService.findPedidoInfoById(id);
+    }
+
+}

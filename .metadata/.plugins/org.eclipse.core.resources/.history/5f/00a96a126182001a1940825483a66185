@@ -1,0 +1,5 @@
+package br.com.restaurante.pedidoservice.repository;
+
+public interface FoodRepository {
+
+}

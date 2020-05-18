@@ -1,0 +1,10 @@
+package br.com.restaurante.pagamentoservice;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient("pedidos")
+public interface PedidoRestClient {
+
+	RequestMapping(value = "/pedidos/{pedidoId}/pago", method = RequestMethod.PUT)
+	void pedidoPago(@PathVariable("pedidoId") Long pedidoId);
+}

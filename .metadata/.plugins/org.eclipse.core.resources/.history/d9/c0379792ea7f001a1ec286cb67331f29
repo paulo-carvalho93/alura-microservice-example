@@ -1,0 +1,20 @@
+package br.com.capgemini.model;
+
+public class Pedido {
+
+	@Id
+    String id;
+
+    private String restauranteId;
+    private List<ItemQuantidade> items;
+    private int precoTotal;
+    private long tempoPedido;
+    private String pagamentoID;
+    private long tempoEntrega;
+
+    private ClienteInfo clienteInfo;
+
+    public ClienteInfo getClienteInfo() {
+        return clienteInfo;
+    }
+}

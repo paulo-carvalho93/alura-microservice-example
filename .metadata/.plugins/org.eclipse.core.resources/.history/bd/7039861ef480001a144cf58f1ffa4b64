@@ -1,0 +1,36 @@
+package br.com.restaraunte.pedidoservice.service;
+
+@Service
+public class PedidoItemService {
+
+	private static final Logger logger = LogManager.getLogger(PedidoItemService.class);
+
+	@Autowired
+	private PedidoItemRepository pedidoItemRepository;
+	
+	public void persitir(PedidoItem pedidoItem) throws Exception {
+		try {
+			pedidoItemRepository.save(pedidoItem);
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+			throw new Exception("Houve um erro ao persitir o pedido.");
+		}
+	}
+
+	public List<PedidoItem> findAll() throws Exception {
+		try {
+			return (List<PedidoItem>) pedidoItemRepository.findAll();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+			throw new Exception("Houve um erro ao consultar os pedidos.");
+		}
+	}
+
+	public PedidoItem findById(Long id) throws Exception {
+		try {
+			return pedidoItemRepository.findById(id).orElse(new PedidoItem());
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+			throw new Exception("Houve um erro ao consultar os pedidos.");
+		}
+	}

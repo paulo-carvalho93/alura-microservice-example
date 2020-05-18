@@ -1,0 +1,57 @@
+package br.com.capgemini.rest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import br.com.capgemini.impl.CardapioServiceImpl;
+import br.com.capgemini.impl.RestauranteServiceImpl;
+import br.com.capgemini.restaurante.model.Cardapio;
+import br.com.capgemini.restaurante.model.Restaurante;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api")
+public class RestauranteServiceRestController {
+    private CardapioServiceImpl cardapioService;
+    private RestauranteServiceImpl restauranteService;
+
+    @Autowired
+    public RestauranteServiceRestController(
+    		CardapioServiceImpl cardapioService,
+    		RestauranteServiceImpl restauranteService
+    ){
+        this.cardapioService = cardapioService;
+        this.restauranteService = restauranteService;
+    }
+
+    @RequestMapping(value = "/restaurantes", method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    public void uploadRestaurante(@RequestBody Restaurante restaurante){
+        restauranteService.saveRestaurante(restaurante);
+    }
+
+    @RequestMapping(value = "/restaurantes", method = RequestMethod.GET)
+    public Restaurante getRestaurantByName(@RequestParam(value = "name") String name){
+        return restauranteService.findRestauranteByName(name);
+    }
+
+    @RequestMapping(value = "/restaurantes/{rid}/cardapio", method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    public void uploadMenuItem(@RequestBody Cardapio cardapio){
+        cardapioService.salvarCardapio(cardapio);
+    }
+
+    @RequestMapping(value = "/restaurants/bulk/menuItem", method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    public void uploadMenuItemList(@RequestBody List<MenuItem> menuItemList){
+        cardapioService.saveMenuItemList(menuItemList);
+    }
+
+    @RequestMapping(value = "restaurants/{rid}/menuItem", method = RequestMethod.GET)
+    public List<MenuItem> getAllMenusByRestaurantId(@PathVariable String rid){
+        return cardapioService.getAllMenuItemsByRestaurantId(rid);
+    }
+
+}

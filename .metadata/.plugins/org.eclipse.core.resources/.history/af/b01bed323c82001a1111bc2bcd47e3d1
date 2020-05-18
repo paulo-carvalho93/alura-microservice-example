@@ -1,0 +1,9 @@
+package br.com.restaurante.pagamentoservice.model;
+
+public enum SituacaoPagamentoEnum {
+	
+	CRIADO,
+	CONFIRMADO,
+	CANCELADO
+	
+}

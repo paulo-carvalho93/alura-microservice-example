@@ -1,0 +1,20 @@
+package br.com.capgemini.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.stereotype.Service;
+
+import br.com.capgemini.repository.CardapioItemsRepository;
+import demo.repository.MenuItemsRepository;
+
+@Service
+public class CardapioServiceImpl {
+	
+	private CardapioItemsRepository cardapioitemsrepository;
+	
+	@Autowired
+	public CardapioServiceImpl(CardapioItemsRepository cardapioItemsRepository){
+        this.cardapioItemsRepository = cardapioItemsRepository;
+    }
+
+}

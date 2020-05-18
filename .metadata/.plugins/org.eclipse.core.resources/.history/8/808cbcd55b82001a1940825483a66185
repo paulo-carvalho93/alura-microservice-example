@@ -1,0 +1,36 @@
+package br.com.restaurante.pedidoservice.model;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@NoArgsConstructor
+@AllArgsConstructor
+public class PedidoDto {
+
+	private String restauranteNome;
+    private String userName;
+    private String pedidoId;
+    private double price;
+
+    private List<FoodItemInfo> foodItemInfoList = new ArrayList<FoodItemInfo>();
+
+    private Pedido.PedidoStatus pedidoStatus;
+
+    public PedidoDto(Pedido pedido) {
+        this.userName = pedido.getUserName();
+        this.pedidoId = pedido.getPedidoId();
+        this.restauranteNome = pedido.getRestauranteNome();
+        this.pedidoStatus = pedido.getOrderStatus();
+        this.price = 0.0;
+    }
+	
+	
+	
+}

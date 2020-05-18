@@ -1,0 +1,12 @@
+package br.com.restaurante.pagamentoservice.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import br.com.restaurante.pagamentoservice.repository.PagamentoRepository;
+
+public class PagamentoService {
+	
+	@Autowired
+	private PagamentoRepository pagamentoRepository;
+
+}

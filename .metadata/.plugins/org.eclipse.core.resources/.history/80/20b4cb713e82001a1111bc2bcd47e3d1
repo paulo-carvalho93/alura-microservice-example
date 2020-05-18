@@ -1,0 +1,19 @@
+package br.com.restaurante.pagamentoservice.service;
+
+import java.net.URI;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.util.UriComponentsBuilder;
+
+import br.com.restaurante.pagamentoservice.model.Pagamento;
+import br.com.restaurante.pagamentoservice.model.PagamentoDTO;
+import br.com.restaurante.pagamentoservice.repository.PagamentoRepository;
+
+public class PagamentoService {
+	
+
+	
+
+
+}

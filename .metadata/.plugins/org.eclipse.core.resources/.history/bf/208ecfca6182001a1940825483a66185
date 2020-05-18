@@ -1,0 +1,74 @@
+package br.com.restaraunte.pedidoservice.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
+
+import br.com.restaraunte.pedidoservice.service.PedidoService;
+import br.com.restaurante.pedidoservice.model.Pedido;
+import br.com.restaurante.pedidoservice.model.PedidoDto;
+
+@RestController
+@RequestMapping("/pedidos")
+public class PedidoController {
+	
+	@Autowired
+	private PedidoService pedidoService;
+	
+	@RequestMapping(value = "/pedido", method = RequestMethod.POST)
+	@ResponseStatus(HttpStatus.CREATED)
+	public List<Pedido> savePedidoByRestauranteId(@PathVariable String restauranteId, @RequestBody List<Pedido> pedidoList) {
+		return pedidoService.savePedidoByRestauranteId(restauranteId, pedidoList);
+	}
+	
+    @RequestMapping(value = "/restaurante/{restauranteId}/pedido")
+    public Page<Pedido> viewPedidoByRestaurante(@PathVariable String restaurantId, Pageable pageable) {
+        return pedidoService.showPedidoByRestaurante(restaurantId, pageable);
+    }
+    
+    @RequestMapping(value = "/restaurante/pedido/pedidoId}", method = RequestMethod.GET)
+    public PedidoDto viewPedidoConfirmation(@PathVariable String pedidoId) {
+        Pedido pedido = pedidoService.findFirstByPedidoId(pedidoId);
+        if (pedido.getPedidoStatus().equals(Pedido.PedidoStatus.PAGO)){
+        	PedidoDto pedidoDto = pedidoService.showPedidoConfirmation(pedidoId);
+            return pedidoDto;
+        }
+        return null;
+    }
+    
+    @RequestMapping(value = "/restaurante/pedido/{pedidoId}", method = RequestMethod.PUT)
+    public void updatePedidoStatus(@PathVariable String pedidoId, @ModelAttribute Pedido.PedidoStatus pedidoStatus){
+    	pedidoService.updatePedidoStatus(pedidoId, pedidoStatus);
+    }
+    
+
+	
+	
+	
+	
+	
+	
+	
+
+	@RequestMapping(method = RequestMethod.GET)
+	public List<Pedido> findAll() {
+		return pedidoService.findAll();
+	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Pedido findById(@PathVariable Long id) {
+        return pedidoService.findById(id);
+    }
+	
+}

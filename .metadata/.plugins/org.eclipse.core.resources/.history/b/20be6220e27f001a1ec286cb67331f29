@@ -1,0 +1,12 @@
+package br.com.capgemini.service;
+
+import br.com.capgemini.model.Restaurante;
+
+public interface RestauranteService {
+
+	void salvarRestaurante(Restaurante restaurante);
+	
+	Restaurante findRestauranteByName(String nome);
+	
+	Restaurante findRestauranteByCategory(String category);
+}

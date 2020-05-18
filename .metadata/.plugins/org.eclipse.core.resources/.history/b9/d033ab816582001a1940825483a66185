@@ -1,0 +1,19 @@
+package br.com.restaurante.pagamentoservice.model;
+
+import java.util.Date;
+
+public class Pedido {
+	
+	private String pedidoId;
+    private String userName;
+    private String restauranteId;
+    private String restauranteNome;
+    private Date timestamp = new Date();
+    
+    public Pedido(PedidoStatus pedidoStatus) {
+        this.pedidoStatus = pedidoStatus;
+    }
+
+    public Pedido() {}
+
+}

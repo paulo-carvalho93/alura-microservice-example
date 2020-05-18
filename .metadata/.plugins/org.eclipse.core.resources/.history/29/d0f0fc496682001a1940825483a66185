@@ -1,0 +1,23 @@
+package br.com.restaurante.pagamentoservice.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import br.com.restaurante.pagamentoservice.service.PagamentoService;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Service
+public class PagamentoServiceImpl implements PagamentoService {
+	
+	@Autowired
+    private RestTemplate restTemplate;
+	
+    public boolean validarInformacao(PaymentInfo paymentInfo) {
+        int m = 3;
+        boolean isValid = (((paymentInfo.getCardNumber() + paymentInfo.getExpiration()).hashCode() - paymentInfo.getCode().hashCode())%m == 0);
+        return isValid;
+    }
+
+}

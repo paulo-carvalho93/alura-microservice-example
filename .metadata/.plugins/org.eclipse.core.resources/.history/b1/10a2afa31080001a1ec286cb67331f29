@@ -1,0 +1,29 @@
+package br.com.capgemini.pagamento;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.annotation.EnableBinding;
+import org.springframework.integration.annotation.MessageEndpoint;
+import org.springframework.integration.annotation.ServiceActivator;
+
+import br.com.capgemini.model.Pagamento;
+import br.com.capgemini.service.PagamentoService;
+
+import org.springframework.cloud.stream.messaging.Sink;
+
+import lombok.extern.slf4j.Slf4j;
+
+@MessageEndpoint
+@EnableBinding(Sink.class)
+@Slf4j
+public class PagamentoSink {
+	
+    @Autowired
+    private PagamentoService pagamentoService;
+
+    @ServiceActivator(inputChannel = Sink.INPUT)
+    public void updatePagamento (Pagamento pagamento) throws Exception {
+        log.info("Pagammento recebido pelo pedidoID:  " + pagamento.getPedidoId());
+        pagamentoService.processarPagamento(pagamento);
+    }
+
+}

@@ -1,0 +1,29 @@
+package br.com.capgemini.model;
+
+import java.util.List;
+
+import org.springframework.data.annotation.Id;
+
+public class PedidoInfo {
+	
+	@Id
+    private String id;
+
+    private String restauranteId;
+
+    private List<CardapioItem> cardapioItems;
+
+    private int total;
+
+    private long orderTime;
+    private long deliveryTime;
+
+    private String pagamentoId;
+
+    private UserInfo userInfo;
+
+    public UserInfo getUserInfo(){
+        return this.userInfo;
+    }
+
+}

@@ -1,0 +1,15 @@
+package br.com.restaurante.pagamentoservice.service.impl;
+
+import org.springframework.stereotype.Service;
+
+import br.com.restaurante.pagamentoservice.service.PagamentoService;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Service
+public class PagamentoServiceImpl implements PagamentoService {
+	
+	@Autowired
+    private RestTemplate restTemplate;
+
+}

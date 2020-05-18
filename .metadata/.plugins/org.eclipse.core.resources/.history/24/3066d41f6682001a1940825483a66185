@@ -1,0 +1,5 @@
+package br.com.restaurante.pagamentoservice.service.impl;
+
+public class PagamentoServiceImpl {
+
+}

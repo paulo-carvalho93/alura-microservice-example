@@ -1,0 +1,13 @@
+package br.com.capgemini.restaurante.model;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+
+@Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@Document
+public class Cardapio {
+
+}

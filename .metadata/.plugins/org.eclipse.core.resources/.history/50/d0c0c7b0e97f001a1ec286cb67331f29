@@ -1,0 +1,15 @@
+package br.com.capgemini.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+import lombok.Data;
+
+@Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class CartaoCreditoInfo {
+    private String Nome;
+    private int numero;
+    private int mesExpiracao;
+    private int anoExpiracao;
+    private int codigoSeguranca;
+}

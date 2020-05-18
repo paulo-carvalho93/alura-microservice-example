@@ -1,0 +1,8 @@
+package br.com.capgemini.repository;
+
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+@RepositoryRestResource(collectionResourceRel = "cardapioitems")
+public class CardapioItemsRepository {
+
+}

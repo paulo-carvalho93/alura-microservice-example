@@ -1,0 +1,11 @@
+package br.com.capgemini.repository;
+
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+import br.com.capgemini.restaurante.model.Cardapio;
+
+@RepositoryRestResource(collectionResourceRel = "cardapioitems")
+public class CardapioItemsRepository extends PagingAndSortingRepository<Cardapio, String>{
+
+}

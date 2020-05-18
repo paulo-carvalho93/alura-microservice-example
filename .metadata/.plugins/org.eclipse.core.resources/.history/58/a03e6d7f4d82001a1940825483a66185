@@ -1,0 +1,56 @@
+package br.com.restaurante.restauranteservice.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table(name = "restaurante")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+public class Restaurante {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	private String restauranteId;
+
+	@JsonProperty("restauranteName")
+	private String restauranteName;
+	private String restauranteDescricao;
+	private String endereco;
+	
+	@JsonProperty("restauranteMenu")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "restaurante")
+    private List<MenuItem> restaurantMenu = new ArrayList<MenuItem>();
+	
+	public Restaurante(String restauranteName, String endereco) {
+        this.restauranteName = restauranteName;
+        this.endereco = endereco;
+        this.restauranteId = String.valueOf((restauranteName+endereco).hashCode());
+    }
+	
+    public Restaurante(String restauranteName, String endereco, String restauranteId) {
+        this.restauranteName = restauranteName;
+        this.restauranteId = restauranteId;
+        this.endereco = endereco;
+    }
+
+}

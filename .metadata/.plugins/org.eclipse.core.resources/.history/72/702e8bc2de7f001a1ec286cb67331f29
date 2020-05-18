@@ -1,0 +1,15 @@
+package br.com.capgemini.model;
+
+import org.springframework.data.annotation.Id;
+
+public class ClienteInfo {
+	
+    @Id
+    private String id;
+
+    private String nome;
+    private String sobrenome;
+    private String endereco;
+    private String telefone;
+
+}

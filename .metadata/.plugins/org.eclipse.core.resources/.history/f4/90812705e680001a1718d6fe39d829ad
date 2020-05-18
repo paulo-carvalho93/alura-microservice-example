@@ -1,0 +1,8 @@
+package br.com.restaurante.tipodecomida.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+
+public interface TipoDeComidaRepository extends JpaRepository<TipoDeComida, Long>{
+
+}

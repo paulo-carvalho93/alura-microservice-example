@@ -1,0 +1,21 @@
+package br.com.restaurante.pagamentoservice;
+
+import org.springframework.cloud.stream.annotation.EnableBinding;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.messaging.MessageChannel;
+import org.springframework.cloud.stream.annotation.Output;
+
+import br.com.restaurante.pagamentoservice.AmqpPagamentoConfig.PagamentoSource;
+
+@EnableBinding(PagamentoSource.class)
+@Configuration
+public class AmqpPagamentoConfig {
+	
+	  public static interface PagamentoSource {
+
+			@Output
+		    MessageChannel pagamentosConfirmados();
+
+	  }
+
+}

@@ -1,0 +1,8 @@
+package br.com.restaurante.pagamentoservice.model;
+
+public class PagamentoConfirmado {
+	
+	private Long pagamentoId;
+	private Long pedidoId;
+
+}

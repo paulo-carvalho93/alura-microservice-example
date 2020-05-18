@@ -1,0 +1,22 @@
+package br.com.restaurante.restauranteservice.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class MenuItemService {	
+	
+	@Autowired
+	private MenuItemRepository menuItemRepository;
+	
+
+    public List<MenuItem> saveMenu(List<MenuItem> menuItemList) {
+        return menuItemRepository.save(menuItemList);
+    }
+	
+    public Page<MenuItem> showMenu(String restaurantId, Pageable pageable) {
+        return menuItemRepository.findByRestaurantInfoId(restaurantId, pageable);
+    }
+
+
+}

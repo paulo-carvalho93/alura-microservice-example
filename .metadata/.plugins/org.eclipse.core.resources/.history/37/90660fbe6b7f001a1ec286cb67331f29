@@ -1,0 +1,11 @@
+package br.com.capgemini.service;
+
+import br.com.capgemini.restaurante.model.Menu;
+
+public interface MenuItemService {
+	
+	void salvarCardapio(Menu menu);
+	
+	
+
+}

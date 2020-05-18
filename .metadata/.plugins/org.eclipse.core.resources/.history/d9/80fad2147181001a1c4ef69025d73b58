@@ -1,0 +1,15 @@
+package br.com.restaurante.restauranteservice.service.impl;
+
+import java.util.List;
+
+import org.springframework.data.repository.query.Param;
+
+import br.com.restaurante.restauranteservice.model.Restaurante;
+
+public class RestauranteServiceImpl {
+	
+	List<Restaurante> findAll(Restaurante restaurante);
+	
+    Restaurante findByNome(@Param("nome") String nome);
+
+}

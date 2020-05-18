@@ -1,0 +1,52 @@
+package br.com.restaurante.pedidoservice.model;
+
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table(name = "pedidos")
+@JsonInclude(Include.NON_NULL)
+@Data
+@NoArgsConstructor
+public class Pedido {
+
+	public static enum PedidoStatus {
+		CRIADO,
+		PAGO,
+		CANCELADO
+	}
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	private String pedidoId;
+    private String userName;
+    private String restauranteId;
+    private String restauranteNome;
+    private Date timestamp = new Date();
+    private PedidoStatus pedidoStatus = PedidoStatus.CRIADO;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "orderInfo")
+    private List<FoodItemInfo> foodItemInfoList;
+
+	
+}

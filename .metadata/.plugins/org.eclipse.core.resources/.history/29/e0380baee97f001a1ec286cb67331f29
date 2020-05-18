@@ -1,0 +1,11 @@
+package br.com.capgemini.model;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@Data
+public class CartaoCreditoInfo {
+    private String Nome;
+    private int numero;
+    private int mesExpiracao;
+    private int anoExpiracao;
+    private int codigoSeguranca;
+}

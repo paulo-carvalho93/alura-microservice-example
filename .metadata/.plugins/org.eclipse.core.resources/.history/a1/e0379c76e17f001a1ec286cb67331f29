@@ -1,0 +1,20 @@
+package br.com.capgemini.repository;
+
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.data.rest.core.annotation.Description;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.data.rest.core.annotation.RestResource;
+
+import br.com.capgemini.model.Restaurante;
+
+@RepositoryRestResource(collectionResourceRel = "restaurantes")
+public interface RestauranteRepository extends PagingAndSortingRepository<Restaurante, String>{
+	
+	@RestResource(rel = "by-name", description = @Description("Procurar restaurante pelo nome"))
+    Restaurante findByName(@Param("nome") String nome);
+	
+	@RestResource(rel = "by-category", description = @Description("Procurar restaurante por categoria"))
+    Restaurante findFirstByCategory(@Param("categoria") String categoria);
+
+}

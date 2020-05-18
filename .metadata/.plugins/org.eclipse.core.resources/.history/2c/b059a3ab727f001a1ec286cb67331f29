@@ -1,0 +1,62 @@
+package br.com.capgemini.rest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import br.com.capgemini.impl.MenuItemServiceImpl;
+import br.com.capgemini.impl.RestauranteServiceImpl;
+import br.com.capgemini.restaurante.model.MenuItem;
+import br.com.capgemini.restaurante.model.Restaurante;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api")
+public class RestauranteServiceRestController {
+    private MenuItemServiceImpl menuItemService;
+    private RestauranteServiceImpl restauranteService;
+
+    @Autowired
+    public RestauranteServiceRestController(
+    		MenuItemServiceImpl menuItemService,
+    		RestauranteServiceImpl restauranteService
+    ){
+        this.menuItemService = menuItemService;
+        this.restauranteService = restauranteService;
+    }
+
+    @RequestMapping(value = "/restaurantes", method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    public void uploadRestaurante(@RequestBody Restaurante restaurante){
+        restauranteService.salvarRestaurante(restaurante);
+    }
+
+    @RequestMapping(value = "/restaurantes", method = RequestMethod.GET)
+    public Restaurante getRestaurantByName(@RequestParam(value = "nome") String nome){
+        return restauranteService.findRestauranteByName(nome);
+    }
+    
+    @RequestMapping(value = "/restaurantes", method = RequestMethod.GET)
+    public Restaurante getRestaurantByCategory(@RequestParam(value = "categoria") String categoria){
+        return restauranteService.findRestauranteByCategory(categoria);
+    }
+
+    @RequestMapping(value = "/restaurantes/{rid}/cardapio", method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    public void uploadMenuItem(@RequestBody MenuItem menuItem){
+        menuItemService.salvarMenuItem(menuItem);
+    }
+
+    @RequestMapping(value = "/restaurantes/bulk/cardapio", method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    public void uploadMenuItemList(@RequestBody List<MenuItem> menuItemList){
+        menuItemService.salvarMenuItemList(menuItemList);
+    }
+
+    @RequestMapping(value = "restaurantes/{rid}/cardapio", method = RequestMethod.GET)
+    public List<MenuItem> getAllMenusByRestaurantId(@PathVariable String rid){
+        return menuItemService.getAllMenuItemsByRestaurantId(rid);
+    }
+
+}

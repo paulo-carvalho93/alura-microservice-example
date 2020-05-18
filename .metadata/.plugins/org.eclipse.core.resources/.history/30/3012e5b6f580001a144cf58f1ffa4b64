@@ -1,0 +1,15 @@
+package br.com.restaurante.pedidoservice.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import br.com.restaurante.pedidoservice.model.Pedido;
+import br.com.restaurante.pedidoservice.model.PedidoItem;
+
+@Repository
+public interface PedidoItemRepository extends JpaRepository<PedidoItem, Long>{
+
+	List<PedidoItem> findAll(PedidoItem pedidoItem);
+}

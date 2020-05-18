@@ -1,0 +1,18 @@
+package br.com.capgemini.model;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+import lombok.Data;
+
+@Data
+@Document
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class CardapioItem {
+	
+	private String nome;
+	private int quantidade;
+	private double price;
+
+}

@@ -1,0 +1,28 @@
+package br.com.capgemini.pagamento;
+
+import java.math.BigDecimal;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+class PagamentoDto {
+
+	private Long id;
+	private BigDecimal valor;
+	private String nome;
+	private String numero;
+	private String expiracao;
+	private String codigo;
+	private Pagamento.Status status;
+	private Long formaDePagamentoId;
+	private Long pedidoId;
+
+	PagamentoDto(Pagamento p) {
+		this(p.getId(), p.getValor(), p.getNome(), p.getNumero_cc(), p.getExpiracao_cc(), p.getCodigo_cc(), p.getStatus(), p.getFormaDePagamentoId(), p.getPedidoId());
+	}
+
+}

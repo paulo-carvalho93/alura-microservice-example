@@ -1,0 +1,75 @@
+package br.com.restaraunte.pedidoservice.service;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import br.com.restaurante.pedidoservice.model.FoodItem;
+import br.com.restaurante.pedidoservice.model.Pedido;
+import br.com.restaurante.pedidoservice.model.PedidoDto;
+import br.com.restaurante.pedidoservice.repository.FoodRepository;
+import br.com.restaurante.pedidoservice.repository.PedidoRepository;
+
+@Service
+public class PedidoService {
+	
+	private PedidoRepository pedidoRepository;
+	private FoodRepository foodRepository;
+	
+	@Autowired
+    public PedidoService (PedidoRepository pedidoRepository, FoodRepository foodRepository) {
+        this.foodRepository = foodRepository;
+        this.pedidoRepository = pedidoRepository;
+    }
+	
+	public List<Pedido> savePedidoByRestauranteId(String restauranteId, List<Pedido> pedidos) {
+		for (Pedido pedido : pedidos) {
+			pedido.setRestauranteId(restauranteId);
+		}
+		return pedidoRepository.saveAll(pedidos);
+	}
+	
+	public Page<Pedido> showPedidoByRestaurante(String restauranteId, Pageable pageable) {
+        return pedidoRepository.showPedidoByRestaurante(restauranteId, pageable);
+    }
+	
+    public PedidoDto showPedidoConfirmation(String pedidoId) {
+        Pedido pedido = pedidoRepository.findFirstByPedidoId(pedidoId);
+        PedidoDto pedidoDto = new PedidoDto(pedido);
+
+        List<FoodItem> foodItemList = foodRepository.findFirstByPedido(pedido);
+        pedidoDto.setFoodItemInfoList(foodItemList);
+
+        double valorTotal = 0.0;
+        for (FoodItem foodItem : foodItemList) {
+            valorTotal += foodItem.getPreco() * foodItem.getQuantidade();
+        }
+        pedidoDto.setPreco(valorTotal);
+
+        return pedidoDto;
+    }
+	
+	public void updatePedidoStatus(String pedidoId, Pedido.PedidoStatus pedidoStatus) {
+        Pedido pedido = findFirstByPedidoId(pedidoId);
+        pedido.setPedidoStatus(pedidoStatus);
+        pedidoRepository.save(pedido);
+    }
+	
+	public Pedido findFirstByPedidoId(String pedidoId) {
+        return pedidoRepository.findFirstByPedidoId(pedidoId);
+    }
+	
+	public List<Pedido> findAll() {
+		List<Pedido> pedidos = (List<Pedido>) pedidoRepository.findAll();
+		return pedidos;
+	}
+
+	public Pedido findById(Long id) {
+		return pedidoRepository.findById(id).orElse(new Pedido());
+	}
+
+}

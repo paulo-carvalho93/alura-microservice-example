@@ -1,0 +1,10 @@
+package br.com.restaurante.pagamentoservice.model;
+
+public enum SituacaoPagamentoEnum {
+	
+	MONTANDO_PEDIDO,
+	PENDENTE_APROVACAO,
+	APROVADO,
+	CANCELADO
+	
+}

@@ -1,0 +1,12 @@
+1587317767758	Rename type 'PagamentoServiceApplication'
+1587317773846	Rename type 'PagamentoServiceApplicationTests'
+1587317780827	Delete element
+1587318267279	Rename local variable 'orderStatus'
+1587318639405	Rename local variable 'paymentInfo'
+1587318735206	Rename local variable 'isValid'
+1587318742240	Rename local variable 'iscartaoValido'
+1587318766832	Rename local variable 'paymentInfo'
+1587318841118	Rename local variable 'orderInfo'
+1587319038805	Rename local variable 'paymentInfo'
+1587319985256	Rename local variable 'isValid'
+1587326428779	Delete element

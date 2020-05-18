@@ -1,0 +1,15 @@
+1586977214290	Rename package 'br.com.caelum.eats'
+1586977234778	Rename type 'EatsApplication'
+1586977254632	Rename package 'br.com.caelum.eats.controller'
+1586977264036	Rename package 'br.com.caelum.eats.dto'
+1586977270906	Rename package 'br.com.caelum.eats.exception'
+1586977278286	Rename package 'br.com.caelum.eats.model'
+1586977293588	Rename package 'br.com.caelum.eats.repository'
+1586977302621	Rename package 'br.com.caelum.eats.service'
+1586977523651	Delete element
+1586977540095	Delete element
+1586978150507	Delete element
+1586978594709	Delete element
+1586978613989	Delete element
+1586986639176	Delete element
+1586986652173	Rename resource 'application.properties'

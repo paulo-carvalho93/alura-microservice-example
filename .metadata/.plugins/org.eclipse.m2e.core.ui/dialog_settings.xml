@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\dudux\Desktop\restaurante\pagamento-validator"/>
+			<item value="C:\Users\dudux\Desktop\Food-Delivery-Application-master"/>
+			<item value="C:\Users\dudux\Desktop\restaurante\pagamento-service"/>
+			<item value="C:\Users\dudux\Desktop\restaurante\pedido-service"/>
+			<item value="C:\Users\dudux\Desktop\restaurante\tipodecomida-service"/>
+			<item value="C:\Users\dudux\Desktop\restaurante\tipodecomida"/>
+			<item value="C:\Users\dudux\Desktop\restaurante\auth-server"/>
+			<item value="C:\Users\dudux\Desktop\POC_Restaurante\restaurante-service"/>
+			<item value="C:\Users\dudux\Desktop\restaurante\restaurante-service"/>
+			<item value="C:\Users\dudux\Desktop\restaurante\eureka-server"/>
+			<item value="C:\Users\dudux\Desktop\restaurante\apigateway"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

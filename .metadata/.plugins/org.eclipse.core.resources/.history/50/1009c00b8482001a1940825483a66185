@@ -1,0 +1,72 @@
+package br.com.restaurante.pedidoservice.model;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table(name = "pedidos")
+@JsonInclude(Include.NON_NULL)
+@Data
+@NoArgsConstructor
+public class Pedido {
+
+	public static enum PedidoStatus {
+		CRIADO,
+		PROCESSANDO,
+		PAGO,
+		CANCELADO
+	}
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	private String pedidoId;
+    private String userId;
+    private String restauranteId;
+    private String restauranteNome;
+    private Date timestamp = new Date();
+    private PedidoStatus pedidoStatus = PedidoStatus.CRIADO;
+
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "pedidos")
+    private List<FoodItem> foodItemList;
+    
+    @JsonCreator
+    public Pedido(@JsonProperty("Id") Long Id) {
+        this.id = Id;
+    }
+    
+    public Pedido(String pedidoId, String userId, String restauranteNome) {
+        this.pedidoId = pedidoId;
+        this.userId = userId;
+        this.restauranteNome = restauranteNome;
+        this.pedidoStatus = PedidoStatus.PROCESSANDO;
+    }
+
+	public Pedido(String pedidoId, String userId, String restauranteId, String restauranteNome,
+			Date timestamp) {
+		this.pedidoId = pedidoId;
+		this.userId = userId;
+		this.restauranteId = restauranteId;
+		this.restauranteNome = restauranteNome;
+		this.timestamp = timestamp;
+		this.pedidoStatus = PedidoStatus.PROCESSANDO;
+	}
+    
+}

@@ -1,0 +1,45 @@
+package br.com.restaurante.restauranteservice.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import br.com.restaurante.restauranteservice.model.Restaurante;
+import br.com.restaurante.restauranteservice.repository.RestauranteRepository;
+
+@Service
+public class RestauranteService {
+	
+	@Autowired
+	private RestauranteRepository restauranteRepository;
+	
+	public void salvar(Restaurante restaurante) {
+		restauranteRepository.save(restaurante);
+	}
+	
+	public Restaurante atualizar(Restaurante restaurante) {
+		Restaurante restauranteBD = restauranteRepository.getOne(restaurante.getId());
+		restauranteBD.setRestauranteName(restaurante.getRestauranteName());
+		restauranteBD.setRestauranteDescricao(restaurante.getRestauranteDescricao());
+		restauranteBD.setRestauranteEndereco(restaurante.getRestauranteEndereco());
+		
+		return restauranteRepository.save(restauranteBD);
+	}
+
+	public Page<Restaurante> findByRestauranteNome(String restauranteNome, Pageable pageable) {
+        return restauranteRepository.findByRestauranteNome(restauranteNome, pageable);
+    }
+	
+	public Restaurante findByRestauranteId(String restauranteId) {
+        return restauranteRepository.findByRestauranteId(restauranteId);
+    }
+		
+	public List<Restaurante> findAll() {
+		List<Restaurante> restaurantes = (List<Restaurante>) restauranteRepository.findAll();
+		return restaurantes;
+	}
+	 
+}

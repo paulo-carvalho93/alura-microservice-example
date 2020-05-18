@@ -1,0 +1,9 @@
+package br.com.restaurante.pedidoservice.model;
+
+public enum SituacaoPedidoEnum {
+	
+	MONTANDO_PEDIDO,
+	PENDENTE_APROVACAO,
+	APROVADO
+	
+}

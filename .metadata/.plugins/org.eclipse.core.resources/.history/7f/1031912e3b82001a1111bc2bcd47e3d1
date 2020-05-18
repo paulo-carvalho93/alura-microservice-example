@@ -1,0 +1,5 @@
+package br.com.restaurante.pagamentoservice.model;
+
+public class PagamentoDTO {
+
+}

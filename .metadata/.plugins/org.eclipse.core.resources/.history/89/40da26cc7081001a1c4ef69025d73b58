@@ -1,0 +1,8 @@
+package br.com.restaurante.restauranteservice.service.impl;
+
+import org.springframework.stereotype.Service;
+
+@Service 
+public class RestauranteServiceImpl implements RestauranteService {
+
+}

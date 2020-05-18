@@ -1,0 +1,27 @@
+package br.com.restaraunte.pedidoservice.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.com.restaurante.pedidoservice.model.PedidoItem;
+
+@Service
+public class PedidoItemService {
+
+	@Autowired
+	private PedidoItemRepository pedidoItemRepository;
+	
+	public void salvar(PedidoItem pedidoItem) throws Exception {
+		pedidoItemRepository.save(pedidoItem);
+	}
+
+	public List<PedidoItem> findAll() throws Exception {
+		return (List<PedidoItem>) pedidoItemRepository.findAll();
+	}
+
+	public PedidoItem findById(Long id) throws Exception {
+		return pedidoItemRepository.findById(id).orElse(new PedidoItem());
+	}
+}

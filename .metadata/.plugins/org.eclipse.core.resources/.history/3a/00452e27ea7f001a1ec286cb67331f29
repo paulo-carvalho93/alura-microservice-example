@@ -1,0 +1,12 @@
+package br.com.capgemini.model;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@Data
+@Document
+public class ItemQuantidade {
+	
+    private String nome;
+    private int preco;
+    private int quantidade;
+
+}

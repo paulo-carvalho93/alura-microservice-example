@@ -1,0 +1,38 @@
+package br.com.restaurante.restauranteservice.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.restaurante.restauranteservice.model.Restaurante;
+import br.com.restaurante.restauranteservice.service.RestauranteService;
+
+@RestController
+public class RestauranteController {
+
+	@Autowired
+	private RestauranteService restauranteService;
+
+	// Inclusão de novo restaurante via POST
+	@RequestMapping(value = "/restaurante", method = RequestMethod.POST)
+	@ResponseStatus(HttpStatus.CREATED)
+	public void salvar(@RequestBody Restaurante restaurante) {
+		restauranteService.salvar(restaurante);
+	}
+	
+	// Atualização de restaurante via PUT
+	@RequestMapping(value = "/restaurante/{id}", method = RequestMethod.PUT)
+	public void atualizar(@RequestBody Restaurante restaurante) {
+		restauranteService.salvar(restaurante);
+	}
+		
+	// Procurar pelo nome do restaurante
+	@RequestMapping(value = "/restaurante/{nome}", method = RequestMethod.GET)
+    public Restaurante findByNome(@PathVariable String nome) {
+        return this.restauranteService.findByNome(nome);
+    }
+	
+}

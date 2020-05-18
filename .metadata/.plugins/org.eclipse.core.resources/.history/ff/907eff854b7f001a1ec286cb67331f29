@@ -1,0 +1,13 @@
+package br.com.caelum.eats.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import br.com.capgemini.restaurantes.model.TipoDeCozinha;
+
+public interface TipoDeCozinhaRepository extends JpaRepository<TipoDeCozinha, Long> {
+
+	List<TipoDeCozinha> findAllByOrderByNomeAsc();
+
+}

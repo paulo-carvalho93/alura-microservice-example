@@ -1,0 +1,54 @@
+package br.com.restaurante.restauranteservice.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.restaurante.restauranteservice.model.Restaurante;
+import br.com.restaurante.restauranteservice.service.RestauranteService;
+
+@RestController
+@RequestMapping("/restaurantes")
+public class RestauranteController {
+
+	@Autowired
+	private RestauranteService restauranteService;
+
+	// Inclusão de novo restaurante via POST
+	@RequestMapping(value = "/restaurante", method = RequestMethod.POST)
+	public void salvar(@RequestBody Restaurante restaurante) {
+		restauranteService.salvar(restaurante);
+	}
+	
+	// Atualização de restaurante via PUT
+	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+	public void atualizar(@RequestBody Restaurante restaurante) {
+		restauranteService.salvar(restaurante);
+	}
+		
+	// Procurar pelo nome do restaurante
+	@RequestMapping(method = RequestMethod.GET)
+    public Restaurante findByNome(@@RequestParam(value="name") String nome) {
+        return restauranteService.findByNome(nome);
+    }
+	
+	// Procurar pelo ID
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Optional<Restaurante> findById(@PathVariable Long id) {
+        return restauranteService.findById(id);
+    }
+	
+	// Procurar todos os restaurantes
+	@RequestMapping(method = RequestMethod.GET)
+	public List<Restaurante> findAll() {
+		return restauranteService.findAll();
+	}
+	
+}

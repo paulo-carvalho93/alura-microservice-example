@@ -1,0 +1,37 @@
+package br.com.restaurante.restauranteservice.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.com.restaurante.restauranteservice.model.Restaurante;
+import br.com.restaurante.restauranteservice.repository.RestauranteRepository;
+import br.com.restaurante.restauranteservice.service.RestauranteService;
+
+@Service
+public class RestauranteServiceImpl implements RestauranteService {
+	
+
+	private RestauranteRepository restauranteRepository;
+	
+	@Autowired
+	public RestauranteServiceImpl(RestauranteRepository restauranteRepository) {
+		this.restauranteRepository = restauranteRepository;
+	}
+	
+	public void salvar(Restaurante restaurante) {
+		restauranteRepository.save(restaurante);
+
+	}
+
+	public List<Restaurante> findAll() {
+		return (List<Restaurante>) restauranteRepository.findAll();
+		
+	}
+	
+	public Restaurante findByNome(String nome) {
+        return restauranteRepository.findByNome(nome);
+    }
+
+}

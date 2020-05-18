@@ -1,0 +1,48 @@
+package br.com.restaraunte.pedidoservice.service;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.com.restaurante.pedidoservice.AmqpPedidoConfig.AtualizacaoPedidoSource;
+import br.com.restaurante.pedidoservice.ResourceNotFoundException;
+import br.com.restaurante.pedidoservice.model.Pedido;
+import br.com.restaurante.pedidoservice.model.PedidoItem;
+import br.com.restaurante.pedidoservice.model.SituacaoPedidoEnum;
+import br.com.restaurante.pedidoservice.repository.PedidoRepository;
+
+@Service
+public class PedidoService {
+	
+	
+	private PedidoRepository pedidoRepository;
+	private FoodRepository foodRepository;
+	
+	@Autowired
+    public PedidoService (PedidoRepository pedidoRepository, FoodRepository foodRepository) {
+        this.foodRepository = foodRepository;
+        this.pedidoRepository = pedidoRepository;
+    }
+	
+	@Override
+	public List<Pedido> savePedidoByRestauranteId(String restauranteId, List<Pedido> pedidos) {
+		for (Pedido pedido : pedidos) {
+			pedido.setRestauranteId(restauranteId);
+		}
+		return pedidoRepository.save(pedidos);
+	}
+	
+
+
+	public List<Pedido> findAll() {
+		List<Pedido> pedidos = (List<Pedido>) pedidoRepository.findAll();
+		return pedidos;
+	}
+
+	public Pedido findById(Long id) {
+		return pedidoRepository.findById(id).orElse(new Pedido());
+	}
+
+}

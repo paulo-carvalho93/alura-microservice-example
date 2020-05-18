@@ -1,0 +1,29 @@
+package br.com.capgemini.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.com.capgemini.model.Restaurante;
+import br.com.capgemini.repository.RestauranteRepository;
+
+@Service
+public class RestauranteServiceImpl {
+	private RestauranteRepository restauranteRepository;
+	
+	@Autowired
+    public RestauranteServiceImpl(RestauranteRepository restauranteRepository){
+        this.restauranteRepository = restauranteRepository;
+    }
+
+    public void salvarRestaurante(Restaurante restaurante) {
+        restauranteRepository.save(restaurante);
+    }
+    
+    public Restaurante findRestauranteByName(String nome) {
+        return restauranteRepository.findFirstByName(nome);
+    }
+    
+    public Restaurante findRestauranteByCategory(String category) {
+        return restauranteRepository.findFirstByCategory(category);
+    }
+}

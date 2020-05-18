@@ -1,0 +1,9 @@
+package br.com.restaurante.restauranteservice.service.impl;
+
+
+@Service
+public class RestauranteServiceImpl implements RestauranteService {
+	
+	
+
+}

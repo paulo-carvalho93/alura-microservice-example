@@ -1,0 +1,47 @@
+package br.com.restaraunte.pedidoservice.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
+
+import br.com.restaraunte.pedidoservice.service.PedidoService;
+import br.com.restaurante.pedidoservice.model.Pedido;
+
+@RestController
+@RequestMapping("/pedidos")
+public class PedidoController {
+	
+	@Autowired
+	private PedidoService pedidoService;
+	
+	@RequestMapping(value = "/pedido", method = RequestMethod.POST)
+	@ResponseStatus(HttpStatus.CREATED)
+	public List<Pedido> saveOrdersByRestaurantId(@PathVariable String restauranteId,
+			@RequestBody List<Pedido> pedidoList) {
+		return pedidoService.saveOrdersByRestaurantId(restauranteId, pedidoList);
+	}
+	
+	@RequestMapping(value = "/{id}/pago", method = RequestMethod.PUT)
+	public void pedidoPago(@PathVariable("id") Long id) {
+		pedidoService.pedidoPago(id);
+	}
+
+	@RequestMapping(method = RequestMethod.GET)
+	public List<Pedido> findAll() {
+		return pedidoService.findAll();
+	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public Pedido findById(@PathVariable Long id) {
+        return pedidoService.findById(id);
+    }
+	
+}

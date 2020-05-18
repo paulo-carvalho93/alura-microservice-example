@@ -1,0 +1,9 @@
+spring.application.name=zuul
+eureka.instance.hostname=localhost
+server.port=9090
+ 
+zuul.prefix=/api
+zuul.ignored-services=*
+zuul.routes.restaurantes.path=/restaurantes/**
+zuul.routes.restaurantes.serviceId=restaurante-service
+zuul.routes.restaurantes.strip-prefix=false
