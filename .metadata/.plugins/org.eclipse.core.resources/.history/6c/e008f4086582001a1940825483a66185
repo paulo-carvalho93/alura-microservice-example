@@ -1,9 +1,0 @@
-package br.com.restaurante.pagamentoservice.model;
-
-public class Pagamento {
-	
-    private String numeroCartao;
-    private String expiracao;
-    private String codigo;
-    private String pedidoId;
-}

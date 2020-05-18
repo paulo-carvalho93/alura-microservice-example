@@ -1,6 +1,0 @@
-package br.com.restaurante.restauranteservice.controller;
-
-@RestController
-public class MenuItemController {
-
-}

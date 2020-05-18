@@ -1,8 +1,0 @@
-package br.com.restaurante.pagamentoservice.service;
-
-import br.com.restaurante.pagamentoservice.model.Pagamento;
-
-public interface PagamentoService {
-	boolean validateInformacao(Pagamento pagamento);
-    boolean processarPagamento(Pagamento pagamento);
-}

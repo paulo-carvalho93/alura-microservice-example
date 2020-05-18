@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.alura.microservice.loja.controller.dto.CompraDTO;
+import br.com.alura.microservice.loja.dto.CompraDTO;
 import br.com.alura.microservice.loja.service.CompraService;
 
 @RestController

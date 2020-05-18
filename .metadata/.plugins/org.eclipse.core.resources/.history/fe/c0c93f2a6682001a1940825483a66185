@@ -1,8 +1,0 @@
-package br.com.restaurante.pagamentoservice.service.impl;
-
-
-@Slf4j
-@Service
-public class PagamentoServiceImpl implements PagamentoService {
-
-}

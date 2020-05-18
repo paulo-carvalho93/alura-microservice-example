@@ -1,8 +1,0 @@
-package br.com.restaurante.restauranteservice.repository;
-
-public interface MenuItemRepository {
-	
-	 Page<MenuItem> showMenu(String restaurantId, Pageable pageable);
-	 List<MenuItem> saveMenu(List<MenuItem> menuItemList);
-
-}

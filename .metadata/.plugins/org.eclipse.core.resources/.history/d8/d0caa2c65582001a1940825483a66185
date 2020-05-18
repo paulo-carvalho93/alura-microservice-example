@@ -1,8 +1,0 @@
-package br.com.restaurante.restauranteservice.service;
-
-import org.springframework.web.bind.annotation.RequestMapping;
-
-@Service
-public class MenuItemService {
-
-}

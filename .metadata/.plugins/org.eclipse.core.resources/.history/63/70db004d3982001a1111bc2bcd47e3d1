@@ -1,7 +1,0 @@
-package br.com.restaurante.pagamentoservice.controller;
-
-@RestController
-@RequestMapping("/pagamentos")
-public class PagamentoController {
-
-}

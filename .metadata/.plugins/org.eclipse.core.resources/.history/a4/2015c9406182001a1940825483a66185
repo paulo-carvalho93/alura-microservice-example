@@ -1,7 +1,0 @@
-package br.com.restaurante.pedidoservice.repository;
-
-import br.com.restaurante.pedidoservice.model.FoodItem;
-
-public interface FoodRepository extends JpaRepository<FoodItem, Long>{
-
-}

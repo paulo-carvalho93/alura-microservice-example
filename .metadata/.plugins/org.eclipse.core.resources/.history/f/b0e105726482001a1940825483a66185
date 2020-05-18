@@ -1,9 +1,0 @@
-package br.com.restaurante.pagamentoservice;
-
-
-@MessageEndpoint
-@EnableBinding(Sink.class)
-@Slf4j
-public class PagamentoValidatorSink {
-
-}

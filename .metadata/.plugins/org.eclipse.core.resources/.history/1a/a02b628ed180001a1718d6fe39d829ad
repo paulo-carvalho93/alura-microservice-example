@@ -1,5 +1,0 @@
-package br.com.restaurante.restauranteservice;
-
-public class ResourceServerConfigurer {
-
-}
