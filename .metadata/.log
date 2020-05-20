@@ -5778,3 +5778,39 @@ Contains: Missing org.springframework.cloud:spring-cloud-starter-sleuth:jar:java
 !MESSAGE Could not resolve artifact org.springframework.cloud:spring-cloud-starter-sleuth:jar:javadoc:2.2.2.RELEASE
 !SUBENTRY 2 org.eclipse.m2e.core 4 -1 2020-05-20 14:28:59.927
 !MESSAGE Missing org.springframework.cloud:spring-cloud-starter-sleuth:jar:javadoc:2.2.2.RELEASE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-20 15:30:39.099
+!MESSAGE Preparing classpath changed notification loja
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-20 15:30:39.100
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-20 15:30:39.107
+!MESSAGE classpath=197 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-20 15:30:39.113
+!MESSAGE buffering callback sts4.classpath.TgzLIbHQ loja false 197
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-20 15:30:39.114
+!MESSAGE executing callback sts4.classpath.TgzLIbHQ 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-20 15:30:39.120
+!MESSAGE executing callback sts4.classpath.TgzLIbHQ SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-20 15:30:42.876
+!MESSAGE Preparing classpath changed notification loja
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-20 15:30:42.876
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-20 15:30:42.882
+!MESSAGE classpath=197 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-20 15:30:42.888
+!MESSAGE buffering callback sts4.classpath.TgzLIbHQ loja false 197
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-20 15:30:42.888
+!MESSAGE executing callback sts4.classpath.TgzLIbHQ 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-20 15:30:42.892
+!MESSAGE executing callback sts4.classpath.TgzLIbHQ SUCCESS [done]
