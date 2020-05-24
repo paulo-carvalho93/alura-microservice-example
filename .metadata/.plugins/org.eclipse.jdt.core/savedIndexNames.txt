@@ -1,7 +1,6 @@
 INDEX VERSION 1.131+C:\Users\dudux\Documents\wks-alura-microservicos\.metadata\.plugins\org.eclipse.jdt.core
 1993102169.index
 1521997986.index
-2464690345.index
 672846616.index
 3683868971.index
 3927963097.index
@@ -18,9 +17,7 @@ INDEX VERSION 1.131+C:\Users\dudux\Documents\wks-alura-microservicos\.metadata\.
 944913230.index
 75364627.index
 2767286007.index
-3189435042.index
 2814807246.index
-3866680004.index
 3943161289.index
 2969409165.index
 85235922.index
@@ -28,7 +25,6 @@ INDEX VERSION 1.131+C:\Users\dudux\Documents\wks-alura-microservicos\.metadata\.
 3606353275.index
 1203956093.index
 3264995056.index
-2875508402.index
 3472542875.index
 2011686478.index
 778969399.index
@@ -38,7 +34,6 @@ INDEX VERSION 1.131+C:\Users\dudux\Documents\wks-alura-microservicos\.metadata\.
 3042482538.index
 2722599064.index
 3155126878.index
-709858696.index
 4062149534.index
 94832228.index
 2123048970.index
@@ -48,7 +43,6 @@ INDEX VERSION 1.131+C:\Users\dudux\Documents\wks-alura-microservicos\.metadata\.
 3303669622.index
 2612877225.index
 733842860.index
-1919307387.index
 2194281627.index
 2032782085.index
 3469832271.index
@@ -91,7 +85,6 @@ INDEX VERSION 1.131+C:\Users\dudux\Documents\wks-alura-microservicos\.metadata\.
 1535355562.index
 2888002911.index
 3943485590.index
-3904888086.index
 3347158640.index
 2550294545.index
 1596096171.index
@@ -100,7 +93,6 @@ INDEX VERSION 1.131+C:\Users\dudux\Documents\wks-alura-microservicos\.metadata\.
 407474170.index
 944593151.index
 1643390156.index
-3274256593.index
 2354687534.index
 642103098.index
 2691992841.index
