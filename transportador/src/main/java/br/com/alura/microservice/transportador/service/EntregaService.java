@@ -12,7 +12,7 @@ import br.com.alura.microservice.transportador.repository.EntregaRepository;
 public class EntregaService {
 	
 	@Autowired
-	private EntregaRepository repository;
+	private EntregaRepository entregaRepository;
 
 	public VoucherDTO reservaEntrega(EntregaDTO pedidoDTO) {
 		
@@ -23,7 +23,7 @@ public class EntregaService {
 		entrega.setEnderecoOrigem(pedidoDTO.getEnderecoOrigem());
 		entrega.setPedidoId(pedidoDTO.getPedidoId());
 		
-		repository.save(entrega);
+		entregaRepository.save(entrega);
 		
 		VoucherDTO voucher = new VoucherDTO();
 		voucher.setNumero(entrega.getId());
