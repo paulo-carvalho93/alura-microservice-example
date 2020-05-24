@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\dudux\Documents\wks-alura-microservicos\eureka-server"/>
+			<item value="C:\Users\dudux\Documents\wks-alura-microservicos\fornecedor"/>
 			<item value="C:\Users\dudux\Desktop\restaurante\pagamento-validator"/>
 			<item value="C:\Users\dudux\Desktop\Food-Delivery-Application-master"/>
 			<item value="C:\Users\dudux\Desktop\restaurante\pagamento-service"/>
